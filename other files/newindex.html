@@ -1,0 +1,36 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Gallery</title>
+<style>
+  img {
+    display: none;
+    max-width: 100%;
+  }
+</style>
+</head>
+<body>
+<div>
+  <img id="appleImage" src="apple.jpeg" alt="Apple">
+</div>
+<button onclick="showNextImage()">Next</button>
+
+<script>
+  const images = ['apple.jpeg', 'ball.jpeg', 'clarinet.jpg'];
+  let currentIndex = 0;
+  const appleImage = document.getElementById('appleImage');
+
+  function showNextImage() {
+    if (currentIndex < images.length - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0;
+    }
+    appleImage.src = images[currentIndex];
+  }
+</script>
+</body>
+</html>
